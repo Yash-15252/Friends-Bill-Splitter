@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Bill Splitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>👥 Friends Bill Splitter</h1>
+            <p>Split bills with friends - track who owes who!</p>
+        </header>
+
+        <section class="friends-management">
+            <h2>👥 Manage Friends</h2>
+            <p>Add or edit friend names for bill splitting.</p>
+            <form id="addFriendForm">
+                <input type="text" id="newFriendName" placeholder="Friend name (e.g., Alice)" required>
+                <button type="submit">Add Friend</button>
+            </form>
+            <div id="friendsList"></div>
+        </section>
+
+        <section class="add-expense">
+            <h2>+ Add Bill</h2>
+            <form id="expenseForm">
+                <input type="text" id="desc" placeholder="Description (e.g., Dinner)" required>
+                <select id="currency">
+                    <option value="USD">$ USD</option>
+                    <option value="EUR">€ EUR</option>
+                    <option value="GBP">£ GBP</option>
+                    <option value="INR">₹ INR</option>
+                </select>
+                <input type="number" id="amount" placeholder="0.00" step="0.01" min="0" required>
+                <select id="payer" required>
+                    <option value="">Who paid?</option>
+                </select>
+                <button type="submit">Add Bill</button>
+            </form>
+        </section>
+
+        <section class="balances">
+            <h2>Running Balances</h2>
+            <div class="balance-grid" id="balanceGrid">
+            </div>
+        </section>
+
+        <section class="charts">
+            <h2>📊 Settlement Chart</h2>
+            <canvas id="owesChart" width="400" height="300"></canvas>
+        </section>
+
+        <section class="expenses-list">
+            <h2>Bills (<span id="expenseCount">0</span>)</h2>
+            <div id="expensesContainer"></div>
+            <div id="noExpenses" class="no-items">No bills yet. Add one above!</div>
+        </section>
+
+        <section class="payments">
+            <h2>💰 Payments & QR</h2>
+            <p>Upload QR code for settlements (screenshot later).</p>
+            <input type="file" id="qrUpload" accept="image/*">
+            <canvas id="qrCanvas" style="display:none;"></canvas>
+            <button onclick="markPaid()">Mark Paid</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
