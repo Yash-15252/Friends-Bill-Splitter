@@ -19,9 +19,6 @@ Friends Bill Splitter: Dynamic friends management, multi-currency bills, real-ti
 - Solid color palette: Navy, grays, green/red accents.
 - Animations: Fade-ins, hovers, smooth updates.
 
-## Screenshots
-(Add your own after testing)
-
 ## GitHub Upload
 \`\`\`bash
 cd C:/Users/yashk/Desktop/couples-expense-splitter
